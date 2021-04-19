@@ -2,6 +2,7 @@
 // { name: タスクの文字列, state: 完了しているかどうかの真偽値 }
 let tasks = [];
 const fs = require('fs');
+
 const fileName = './tasks.json';
 
 // 同期的にファイルから復元
