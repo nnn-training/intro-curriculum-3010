@@ -1,9 +1,10 @@
 'use strict';
+const assert = require('assert');
 const fs = require('fs');
 
+// テストの前に永続化されているファイルを消す
 fs.unlink('./tasks.json', (err) => {
   const todo = require('./index.js');
-  const assert = require('assert');
 
   // add と list のテスト
   todo.add('ノートを買う');
