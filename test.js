@@ -18,4 +18,11 @@ todo.del('鉛筆を買う');
 assert.deepStrictEqual(todo.list(), []);
 assert.deepStrictEqual(todo.donelist(), []);
 
+//ファイルを削除してからテストを実行するようにする
+const fs = require('fs');
+fs.unlink('./tasks.json', err => {
+    const todo = require('./index.js');
+});
+
 console.log('テストが正常に完了しました');
+
