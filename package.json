@@ -7,5 +7,6 @@
     "test": "node test.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": "git@github.com:ntk221/intro-curriculum-3010.git"
 }
