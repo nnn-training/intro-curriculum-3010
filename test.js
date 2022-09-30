@@ -1,5 +1,12 @@
 'use strict';
+
+// ファイル削除
+const fs = require('fs');
+fs.unnlinkSync('./tasks.json');
+
 const todo = require('./index.js');
+
+// テスト処理
 const assert = require('assert');
 
 // add と list のテスト
