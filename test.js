@@ -1,6 +1,10 @@
 'use strict';
-const todo = require('./index.js');
+// const todo = require('./index.js');
 const assert = require('assert');
+const fs = require('fs');
+//unlinkSync を用いることで、 非同期処理でも順序を制御し、tasks.json ファイルが削除された後テストを実行できます。
+fs.unlinkSync('./tasks.json');
+const todo = require('./index.js'); // 削除してから読み込み
 
 // add と list のテスト
 todo.add('ノートを買う');
