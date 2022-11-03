@@ -1,6 +1,11 @@
 'use strict';
-const todo = require('./index.js');
 const assert = require('assert');
+// テスト前に邪魔なtaskの情報を消去しておく
+const fs = require('fs');
+fs.unlinkSync('tasks.json');
+
+// task.jsonの生成
+const todo = require('./index.js');
 
 // add と list のテスト
 todo.add('ノートを買う');
