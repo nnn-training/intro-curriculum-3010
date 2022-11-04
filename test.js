@@ -1,4 +1,6 @@
 'use strict';
+const fs = require('fs');
+fs.unlinkSync('./tasks.json');　// 同期的にtasks.jsonを削除
 const todo = require('./index.js');
 const assert = require('assert');
 
