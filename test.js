@@ -1,4 +1,9 @@
 'use strict';
+
+// 保存されたタスクを削除
+const fs = require('fs');
+fs.unlinkSync('./tasks.json');
+
 const todo = require('./index.js');
 const assert = require('assert');
 
