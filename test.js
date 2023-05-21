@@ -1,4 +1,8 @@
 'use strict';
+//テスト実行前にtasks.jsonを空にする
+const fs = require('node:fs');
+fs.unlinkSync('./tests.json');
+
 const todo = require('./index.js');
 const assert = require('assert');
 
