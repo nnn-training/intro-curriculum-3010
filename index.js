@@ -2,7 +2,6 @@
 // { name: タスクの名前, isDone: 完了しているかどうかの真偽値 }
 let tasks = [];
 const fs = require('node:fs');
-fs.unlinkSync('./tasks.json');
 const fileName = './tasks.json';
 
 // 同期的にファイルから復元
