@@ -1,6 +1,10 @@
 'use strict';
-const todo = require('./index.js');
 const assert = require('node:assert');
+
+// delete tasks.json
+const fs = require('node:fs');
+fs.unlinkSync('./tasks.json');
+const todo = require('./index.js');
 
 // add と list のテスト
 todo.add('ノートを買う');
