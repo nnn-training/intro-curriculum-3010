@@ -1,4 +1,4 @@
-FROM --platform=linux/x86_64 node:18.15.0-slim
+FROM --platform=linux/x86_64 node:latest
 
 RUN apt-get update && \ 
     apt-get install -y locales git procps
