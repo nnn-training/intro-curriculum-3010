@@ -1,4 +1,8 @@
 'use strict';
+
+const fs = require('node:fs');
+fs.unlinkSync('./tasks.json');
+
 const todo = require('./index.js');
 const assert = require('node:assert');
 
