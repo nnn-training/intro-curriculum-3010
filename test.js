@@ -1,4 +1,10 @@
 'use strict';
+// task.jsファイルをtasksBackUpに内容保管してから削除
+const fs = require('node:fs');
+const fileName = './tasks.json';
+const tasksBackUp = JSON.parse(fs.readFileSync(fileName, 'utf8'));
+fs.unlinkSync(fileName);
+
 const todo = require('./index.js');
 const assert = require('node:assert');
 const test = require('node:test');
@@ -21,3 +27,6 @@ test('delのテスト', () => {
   assert.deepStrictEqual(todo.list(), []);
   assert.deepStrictEqual(todo.donelist(), []);
 });
+
+// tasksBackUpの内容をtask.jsファイルに復元（遅延無しだとindex.jsに[]を上書きされる？）
+setTimeout( () => {fs.writeFileSync(fileName, JSON.stringify(tasksBackUp), 'utf8')}, 100);
