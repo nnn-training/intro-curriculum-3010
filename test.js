@@ -1,4 +1,11 @@
 'use strict';
+const fs = require('node:fs');
+try {
+  fs.unlinkSync('./tasks.json');
+} catch (err) {
+  console.log(`tasks.jsonの中身を削除できませんでした`);
+}
+
 const todo = require('./index.js');
 const assert = require('node:assert');
 const test = require('node:test');
