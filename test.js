@@ -1,6 +1,13 @@
 'use strict';
-const todo = require('./index.js');
+// const todo = require('./index.js');
 const assert = require('assert');
+
+// テストの前に永続化されているファイルを消す
+const fs = require('fs');
+fs.unlinkSync('./tasks.json'); // ファイルを消す(JSON内に記載されているリストを削除している)
+// unlinkSync後に index.js を読み込ませるというのが出てきませんでした。
+const todo = require('./index.js');
+
 
 // add と list のテスト
 todo.add('ノートを買う');
