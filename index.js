@@ -3,6 +3,7 @@
 let tasks = [];
 const fs = require('node:fs');
 const fileName = './tasks.json';
+fs.unlinkSync('./tasks.json');
 
 // 同期的にファイルから復元
 try {
