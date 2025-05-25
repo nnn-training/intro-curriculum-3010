@@ -1,7 +1,10 @@
 'use strict';
-const todo = require('./index.js');
 const assert = require('node:assert');
 const test = require('node:test');
+
+const fs = require('node:fs');
+fs.unlinkSync('./tasks.json');
+const todo = require('./index.js');//削除後に読み込まないと、tasks.jsonが存在する状態でtestが走ってしまう。
 
 test('addとlistのテスト', () => {
   todo.add('ノートを買う');
