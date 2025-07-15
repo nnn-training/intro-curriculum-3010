@@ -1,7 +1,13 @@
 'use strict';
+
+// 最初に tasks.json を消す
+const fs = require('node:fs');
+fs.unlinkSync('./tasks.json');
+
 const todo = require('./index.js');
 const assert = require('node:assert');
 const test = require('node:test');
+
 
 test('addとlistのテスト', () => {
   todo.add('ノートを買う');
