@@ -1,7 +1,19 @@
 'use strict';
-const todo = require('./index.js');
+
+
 const assert = require('node:assert');
 const test = require('node:test');
+const fs = require('node:fs');
+
+function deleteFile() {
+  try {
+    fs.unlinkSync('./tasks.json');
+  } catch(err) { 
+    console.log('ファイルが存在しませんでした。')
+  };
+}
+
+const todo = require('./index.js');
 
 test('addとlistのテスト', () => {
   todo.add('ノートを買う');
@@ -21,3 +33,5 @@ test('delのテスト', () => {
   assert.deepStrictEqual(todo.list(), []);
   assert.deepStrictEqual(todo.donelist(), []);
 });
+
+console.log('テストが正常に完了しました。');
